@@ -186,3 +186,37 @@ h1 {
     0% { transform: scale(0.9); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
+
+
+/* --- Handheld Mobile Layout Adjustments --- */
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 0;
+        overflow-y: auto; /* Allows scrolling if the content is taller than old phone screens */
+    }
+
+    .page-layout {
+        flex-direction: column; /* Stacks the cake vertically above the card container */
+        gap: 30px; /* Reduces excessive desktop spacing */
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cake-display {
+        transform: scale(0.85); /* Slightly shrinks the cake so it stays crisp without breaking bounds */
+        margin-bottom: -10px;
+    }
+
+    .container {
+        width: 85%; /* Fluidly scales the greeting container box relative to phone edges */
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Keeps greeting headers readable without clip-wrapping words */
+    }
+}
